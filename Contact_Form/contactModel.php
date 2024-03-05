@@ -7,7 +7,6 @@ $email = $_POST['email'];
 $message = $_POST['message'];
 
 class FormError {
-
     public function errorHandler() {
         $errors = [];
 
@@ -29,11 +28,9 @@ class FormError {
             if (empty($message)) {
                 $errors[] = 'Message is empty!';
             }
-
         }
-        return $errors;
+    return $errors;
     }
-
 } 
 
 $formError = new FormError();

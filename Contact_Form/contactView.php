@@ -1,28 +1,18 @@
-<?php
-
-session_start();
-
-?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Contact Form</title>
 </head>
-
 <body>
-    
     <div class="content">
-
         <h1> Simple Contact Form </h1>
         <h4>  By: xReddskie </h4>
-
         <form action='contactModel.php' method="POST">
-
             <?php
                 if (!empty($_SESSION['errors'])) {
                     $allErrors = join('<br/>', $_SESSION['errors']); 
@@ -44,17 +34,12 @@ session_start();
 
             <br>
             <button type="submit">Send</button>
-
         </form> 
-
         <div class="popup <?php if(isset($_GET['message'])) echo 'active'; ?>">
             <h2>Sent successfully!</h2>
             <p><?php if(isset($_GET['message'])) echo $_GET['message']; ?></p>
             <button onclick="window.location.href = 'contactView.php';">Close</button>
         </div>
-        
     </div>
-
 </body>
-
 </html>
