@@ -10,12 +10,12 @@ class DateTimeDisplay
         $this->dateTime = new DateTime('now', $timezone);
     }
 
-    public function displayDayDateTimeWithSeconds($format = 'l Y-m-d H:i:s')
+    public function displayDayDateTimeWithSeconds($format = 'r')
     {
         return $this->dateTime->format($format);
     }
 
-    public function displayDateTimeWithSeconds($format = 'Y-m-d H:i:s')
+    public function displayDateTimeWithSeconds($format = 'Y-m-d H:i:s e')
     {
         return $this->dateTime->format($format);
     }
@@ -42,4 +42,4 @@ echo "Day Only: " . $dateDisplay->displayDayOnly() . "<br>";
 echo "Date Only: " . $dateDisplay->displayDateOnly() . "<br>";
 echo "Time Only: " . $dateDisplay->displayTimeOnly() . "<br>";
 echo "Date and Time with Seconds: " . $dateDisplay->displayDateTimeWithSeconds() . "<br>";
-echo "Date and Time with Seconds: " . $dateDisplay->displayDayDateTimeWithSeconds() . "<br>";
+echo "Full Date and Time: " . $dateDisplay->displayDayDateTimeWithSeconds() . "<br>";
