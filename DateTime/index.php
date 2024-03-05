@@ -1,18 +1,45 @@
 <?php
 
-class DateTimeDisplay {
+class DateTimeDisplay
+{
     private $dateTime;
 
-    public function __construct() {
-        $this->dateTime = new DateTime();
+    public function __construct()
+    {
+        $timezone = new DateTimeZone('Asia/Manila');
+        $this->dateTime = new DateTime('now', $timezone);
     }
 
-    public function displayDateTime($format = 'Y-m-d H:i:s') {
+    public function displayDayDateTimeWithSeconds($format = 'l Y-m-d H:i:s')
+    {
+        return $this->dateTime->format($format);
+    }
+
+    public function displayDateTimeWithSeconds($format = 'Y-m-d H:i:s')
+    {
+        return $this->dateTime->format($format);
+    }
+
+    public function displayDateOnly($format = 'Y-m-d')
+    {
+        return $this->dateTime->format($format);
+    }
+
+    public function displayTimeOnly($format = 'H:i')
+    {
+        return $this->dateTime->format($format);
+    }
+
+    public function displayDayOnly($format = 'l')
+    {
         return $this->dateTime->format($format);
     }
 }
 
 $dateDisplay = new DateTimeDisplay();
 
-echo "Current Date and Time: " . $dateDisplay->displayDateTime() . "<br>";
-echo "Formatted Date and Time: " . $dateDisplay->displayDateTime('F j, Y h:i:s A');
+echo "Day Only: " . $dateDisplay->displayDayOnly() . "<br>";
+echo "Date Only: " . $dateDisplay->displayDateOnly() . "<br>";
+echo "Time Only: " . $dateDisplay->displayTimeOnly() . "<br>";
+echo "Date and Time with Seconds: " . $dateDisplay->displayDateTimeWithSeconds() . "<br>";
+echo "Date and Time with Seconds: " . $dateDisplay->displayDayDateTimeWithSeconds() . "<br>";
