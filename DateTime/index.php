@@ -43,3 +43,4 @@ echo "Date Only: " . $dateDisplay->displayDateOnly() . "<br>";
 echo "Time Only: " . $dateDisplay->displayTimeOnly() . "<br>";
 echo "Date and Time with Seconds: " . $dateDisplay->displayDateTimeWithSeconds() . "<br>";
 echo "Full Date and Time: " . $dateDisplay->displayDayDateTimeWithSeconds() . "<br>";
+ 
