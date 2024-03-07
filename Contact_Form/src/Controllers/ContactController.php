@@ -1,6 +1,8 @@
 <?php
 
-class Form {
+namespace src\Controllers;
+
+class ContactController {
     private $name;
     private $email;
     private $message;
