@@ -1,17 +1,18 @@
 <?php
 
-require_once 'loginController.php';
+use src\Controllers\LoginController;
 
 $usernameError = "";
 $passwordError = "";
+$isValid = false;
 
 if (isset($_POST['submit'])) {
     $loginController = new LoginController();
     $isValid = $loginController->validateInput($_POST['username'], $_POST['password']);
 
-$usernameError = $loginController->usernameError;
-$passwordError = $loginController->passwordError;
-    
+    $usernameError = $loginController->usernameError;
+    $passwordError = $loginController->passwordError;
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +30,7 @@ $passwordError = $loginController->passwordError;
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="loginView.php" method="post">
+    <form action="index.php" method="post">
         <h3>Login Here</h3>
         <label for="username"><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="username" id="username" 
@@ -46,7 +47,6 @@ $passwordError = $loginController->passwordError;
             if ($isValid) {
                 echo"Successfully Logged In!"; 
             }
-        }
         ?>
 
     </form>

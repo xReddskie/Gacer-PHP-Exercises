@@ -1,6 +1,8 @@
 <?php
 
-class User {
+namespace src\Models;
+
+class LoginModel {
     public $username;
     public $password;
 
@@ -15,7 +17,7 @@ class User {
     public function validateUsername() {
         if (empty($this->username)) {
             return "Username is required";
-        }
+        }   
         
         if ($this->username != $this->storedUsername) {
             return "Username is unknown";
