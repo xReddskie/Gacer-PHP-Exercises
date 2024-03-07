@@ -1,27 +1,17 @@
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #e3dbdb;
-    padding: 15px;
-    border: 2px solid #333333;
-    border-radius: 10px;
-    z-index: 9999;
-}
-
-.popup.active {
-    display: block;
-}
-
 .content {
     max-width: 500px;
     margin: auto;
     color: black;
 }
 
+.result {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #e3dbdb;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 body {
     background-color: pink;
 }
-
