@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@
 <body>
 <div class="content">
     <h1> String Manipulation Exercise </h1>
-    <form action='StringManipController.php' method="POST">
+    <form action='index.php' method="POST">
         <label for="val1"> Enter Text 1: </label><br>
         <input type="text" id="val1" name="val1" required><br>
         <label for="val2"> Enter Text 2 (For Replace: Word to Replace): </label><br>
@@ -33,7 +35,7 @@
     <div class="popup <?php if(isset($_GET['result'])) echo 'active'; ?>">
         <h2>Result</h2>
         <p><?php if(isset($_GET['result'])) echo $_GET['result']; ?></p>
-        <button onclick="window.location.href = 'StringManipView.php';">Close</button>
+        <button onclick="window.location.href = 'index.php';">Close</button>
     </div>
 </div>
 </body>
